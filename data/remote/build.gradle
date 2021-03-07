@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+apply from: '../../android_core_dependencies.gradle'
+apply from: '../../android_commons.gradle'
+
+android {
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    //Modules
+    implementation project(Modules.domain)
+    implementation project(Modules.core)
+    //Navigation
+    implementation AndroidLibraries.navigation
+    implementation AndroidLibraries.navigationFrag
+    //ViewPager2
+    implementation Libraries.viewPager2
+}

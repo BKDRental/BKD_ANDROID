@@ -1,0 +1,10 @@
+/**
+ * Feature dependencies
+ */
+apply from: '../android_core_dependencies.gradle'
+apply from: '../android_commons.gradle'
+
+dependencies {
+    implementation Libraries.koin
+    implementation Libraries.koinViewModel
+}
