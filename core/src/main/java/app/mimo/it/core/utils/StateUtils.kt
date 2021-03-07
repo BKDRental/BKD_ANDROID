@@ -8,4 +8,9 @@ object StateUtils {
         object LOADING : LoginUIState()
         data class ERROR(var message: String) : LoginUIState()
     }
+
+    sealed class NavigationState {
+        object Visible : NavigationState()
+        object InVisible : NavigationState()
+    }
 }

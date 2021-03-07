@@ -60,7 +60,7 @@ object Versions {
 object Libraries {
     // KOIN
     const val koin = "org.koin:koin-android:${Versions.koin}"
-    const val koinViewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
+    const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
 
     // ROOM
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"

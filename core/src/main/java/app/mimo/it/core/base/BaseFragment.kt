@@ -12,7 +12,7 @@ import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import app.mimo.it.core.NavigationCommand
-import app.mimo.it.core.setupSnackBar
+import app.mimo.it.core.extensions.setupSnackBar
 import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseFragment<T : ViewDataBinding>(private var resLayout: Int) : Fragment() {

@@ -1,4 +1,4 @@
-package app.mimo.it.core
+package app.mimo.it.core.extensions
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
