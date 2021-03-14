@@ -4,4 +4,11 @@
     <string name="category">Category</string>
     <string name="notifications">Notifications</string>
     <string name="profile">Profile</string>
+    <string name="choose_dates">Choose dates</string>
+    <string name="pick_up_time">Pick up time</string>
+    <string name="return_time">Return time</string>
+    <string name="pick_up_location">Pick up Location</string>
+    <string name="return_location">Return Location</string>
+    <string name="date">Date</string>
+    <string name="custom_location">Custom location</string>
 </resources>

@@ -2,11 +2,11 @@ package app.mimo.it.core.utils
 
 object StateUtils {
 
-    sealed class LoginUIState {
-        object EMPTY : LoginUIState()
-        object SUCCESS : LoginUIState()
-        object LOADING : LoginUIState()
-        data class ERROR(var message: String) : LoginUIState()
+    sealed class UIState {
+        object EMPTY : UIState()
+        object SUCCESS : UIState()
+        object LOADING : UIState()
+        data class ERROR(var message: String) : UIState()
     }
 
     sealed class NavigationState {

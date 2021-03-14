@@ -48,7 +48,7 @@ object Versions {
     const val mockk = "1.9.2"
     const val fragmentTest = "1.1.0-alpha06"
     const val databinding = "3.5.0"
-    const val material = "1.1.0"
+    const val material = "1.2.0-alpha01"
     const val viewPager2 = "1.1.0-alpha01"
     const val services = "4.3.5"
     const val auth = "20.0.3"

@@ -1,48 +1,40 @@
 package app.mimo.it.bkd.main
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import app.mimo.it.bkd.R
 import app.mimo.it.bkd.databinding.ActivityMainBinding
-import app.mimo.it.bkd.feature.home.HomeFragment
 import app.mimo.it.bkd.viewModel.MainViewModel
-import app.mimo.it.core.extensions.openFragment
-import app.mimo.it.core.utils.NetworkUtils
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
     private val mViewModel by viewModel<MainViewModel>()
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+        configureNavController()
         mBinding.bottomNavigation.itemIconTintList = null
-        openHomePage()
     }
 
-    private fun openHomePage() {
-        openFragment(
-            fragment = HomeFragment.getInstance(),
-            addToBackStack = true,
-            isReplace = true,
-            idContainer = R.id.nav_host_fragment
-        )
+    private fun configureNavController() {
+        navController = findNavController(R.id.nav_host_fragment)
+        appBarConfiguration = AppBarConfiguration.Builder().build()
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
-    protected fun onNetworkChange(block: (Boolean) -> Unit) {
-        NetworkUtils.getNetworkStatus(this)
-            .observe(this, { isConnected ->
-                block(isConnected)
-            })
-    }
-
-    companion object {
-        fun getInstance(activity: AppCompatActivity) {
-            activity.startActivity(Intent(activity, MainActivity::class.java))
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration)
+                || super.onSupportNavigateUp()
     }
 }
