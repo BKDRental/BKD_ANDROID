@@ -24,13 +24,251 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <TextView
+                    android:id="@+id/label_car_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="7dp"
+                    android:text="@string/ducato_koelwagen"
+                    android:textColor="@color/purple_200"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_brand" />
+
+                <ImageView
+                    android:id="@+id/img_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="6dp"
+                    android:src="@drawable/ic_fiat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/img_licence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@drawable/ic_square"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/label_licence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/b"
+                    android:textColor="#B31C335F"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/img_licence"
+                    app:layout_constraintStart_toEndOf="@id/img_licence"
+                    app:layout_constraintTop_toTopOf="@id/img_licence" />
+
+                <ImageView
+                    android:id="@+id/img_cube"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="21dp"
+                    android:src="@drawable/ic_square"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_licence"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/label_cube"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/_16_5_m"
+                    android:textColor="#B31C335F"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/img_cube"
+                    app:layout_constraintStart_toEndOf="@id/img_cube"
+                    app:layout_constraintTop_toTopOf="@id/img_cube" />
+
+                <ImageView
+                    android:id="@+id/img_scale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="21dp"
+                    android:src="@drawable/ic_scale"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_cube"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/label_wight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/_499_kg"
+                    android:textColor="#B31C335F"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/img_scale"
+                    app:layout_constraintStart_toEndOf="@id/img_scale"
+                    app:layout_constraintTop_toTopOf="@id/img_scale" />
+
+                <ImageView
+                    android:id="@+id/img_car_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="21dp"
+                    android:src="@drawable/ic_car_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_scale"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/label_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/_2_15_x_1_55_x_1_36_m"
+                    android:textColor="#B31C335F"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/img_car_size"
+                    app:layout_constraintStart_toEndOf="@id/img_car_size"
+                    app:layout_constraintTop_toTopOf="@id/img_car_size" />
+
+                <ImageView
+                    android:id="@+id/img_special_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="7dp"
+                    android:src="@drawable/ic_special_offer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_car_name"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/label_day_secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/day"
+                    android:textColor="#FF4B55"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/label_price_secondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/label_price_secondary" />
+
+                <TextView
+                    android:id="@+id/label_price_secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/_54_99"
+                    android:textColor="#FF4B55"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@id/container_bottom"
+                    app:layout_constraintEnd_toStartOf="@id/label_day_secondary" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_euro"
+                    app:layout_constraintBottom_toBottomOf="@id/label_price_secondary"
+                    app:layout_constraintEnd_toStartOf="@id/label_price_secondary"
+                    app:layout_constraintTop_toTopOf="@id/label_price_secondary"
+                    app:tint="#FF4B55"
+                    tools:ignore="ContentDescription" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_car_list"
+                    app:layout_constraintTop_toBottomOf="@id/img_car_size">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/purple_200"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/label_day"
+                        app:layout_constraintStart_toStartOf="@id/img_euro"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_tow_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_tow_bar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/tow_bar"
+                        android:textColor="#B31C335F"
+                        android:textSize="8sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_tow_bar" />
+
+                    <TextView
+                        android:id="@+id/label_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:paddingEnd="6dp"
+                        android:text="@string/day"
+                        android:textColor="#801C335F"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="RtlSymmetry" />
+
+                    <TextView
+                        android:id="@+id/label_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/_54_99"
+                        android:textColor="@color/purple_200"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/label_day"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/img_euro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="8dp"
+                        android:src="@drawable/ic_euro"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/label_price"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:id="@+id/imageCar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="40dp"
                 android:src="@drawable/ic_car"
                 app:layout_constraintBottom_toTopOf="@id/container_main"
                 app:layout_constraintStart_toEndOf="@id/guideLine"
@@ -42,7 +280,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.45" />
+                app:layout_constraintGuide_percent="0.40" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

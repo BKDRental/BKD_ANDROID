@@ -1,6 +1,7 @@
 package app.mimo.it.bkd.feature.home
 
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import app.mimo.it.bkd.R
 import app.mimo.it.bkd.databinding.FragmentHomeBinding
@@ -16,6 +17,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private val mViewModel by viewModel<HomeViewModel>()
+    private var isSearch = false
 
     override fun getViewModel(): BaseViewModel = mViewModel
 
@@ -23,8 +25,25 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         super.onActivityCreated(savedInstanceState)
         mBinding.fragment = this
         mBinding.mViewModel = mViewModel
+        initListeners()
         initRecycler()
         initCarList()
+    }
+
+    private fun initListeners() {
+        mBinding.containerSearch.setOnClickListener {
+            if (!isSearch) startAnimate(R.anim.move_to_right)
+            else startAnimate(R.anim.move_to_left)
+        }
+    }
+
+    private fun startAnimate(animate: Int) {
+        mBinding.labelSearch.apply {
+            val anim = AnimationUtils.loadAnimation(context, animate)
+            anim.fillAfter = true
+            startAnimation(anim)
+            isSearch = !isSearch
+        }
     }
 
     override fun onResume() {
@@ -32,7 +51,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         (activity as AppCompatActivity).supportActionBar?.hide()
     }
 
-    private fun initCarList(){
+    private fun initCarList() {
         mBinding.carList.adapter = CarListAdapter()
         mBinding.carList.isNestedScrollingEnabled = false
     }

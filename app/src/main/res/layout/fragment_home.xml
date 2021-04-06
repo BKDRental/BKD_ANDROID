@@ -382,6 +382,7 @@
                 app:layout_constraintTop_toBottomOf="@id/carTypeList">
 
                 <TextView
+                    android:id="@+id/label_search"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"

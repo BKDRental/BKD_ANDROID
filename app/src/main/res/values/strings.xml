@@ -12,4 +12,12 @@
     <string name="date">Date</string>
     <string name="custom_location">Custom location</string>
     <string name="search">Search</string>
+    <string name="b">B</string>
+    <string name="_16_5_m">16,5 m³</string>
+    <string name="_499_kg">499 kg</string>
+    <string name="_2_15_x_1_55_x_1_36_m">2,15 x 1,55 x 1,36 m</string>
+    <string name="tow_bar">Tow Bar</string>
+    <string name="day">/ day</string>
+    <string name="_54_99">54.99</string>
+    <string name="ducato_koelwagen">Ducato Koelwagen</string>
 </resources>
