@@ -10,4 +10,5 @@
     <color name="text_color">#CC1C335F</color>
     <color name="color_line">#261C335F</color>
     <color name="color_check_box">#9E1C335F</color>
+    <color name="color_profile_line">#BD8998AA</color>
 </resources>

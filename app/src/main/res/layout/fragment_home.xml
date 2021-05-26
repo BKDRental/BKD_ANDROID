@@ -15,9 +15,9 @@
     </data>
 
     <ScrollView
-        android:overScrollMode="never"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -217,6 +217,18 @@
                     tools:ignore="ContentDescription" />
 
                 <TextView
+                    android:visibility="gone"
+                    android:id="@+id/textStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_M_1"
+                    android:textColor="@color/purple_200"
+                    android:textSize="@dimen/text_size_XL"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
                     android:id="@+id/textPickUp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -251,7 +263,31 @@
                     app:layout_constraintStart_toEndOf="@id/timeLine"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/textEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_M_1"
+                    android:textColor="@color/purple_200"
+                    android:textSize="@dimen/text_size_XL"
+                    app:layout_constraintStart_toEndOf="@id/timeLine"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/textUnderTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_time"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_MIN"
+                app:layout_constraintStart_toStartOf="@id/layoutTime"
+                app:layout_constraintTop_toBottomOf="@id/layoutTime"
+                tools:text="Date" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutPickUpLocation"
@@ -403,13 +439,102 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:overScrollMode="never"
                 android:id="@+id/carList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/container_search" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/guideLineVerticalCenter"
+                app:layout_constraintTop_toBottomOf="@id/layoutTime"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                        android:id="@+id/container_pick_up_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:ael_duration="500"
+                        app:ael_expanded="false"
+                        app:ael_orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/guideLineVerticalCenter"
+                        app:layout_constraintStart_toStartOf="@id/layoutTime"
+                        app:layout_constraintTop_toBottomOf="@id/layoutTime">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/list_pick_up_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_180sdp"
+                            android:background="@android:color/white"
+                            android:padding="@dimen/_8sdp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="parent"
+                            app:layout_constraintWidth_default="percent" />
+
+                    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/layoutTime"
+                app:layout_constraintTop_toBottomOf="@id/layoutTime"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/_1sdp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                        android:id="@+id/container_return_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:ael_duration="500"
+                        app:ael_expanded="false"
+                        app:ael_orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/guideLineVerticalCenter"
+                        app:layout_constraintStart_toStartOf="@id/layoutTime"
+                        app:layout_constraintTop_toBottomOf="@id/layoutTime">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/list_return_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_180sdp"
+                            android:background="@android:color/white"
+                            android:padding="@dimen/_8sdp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="parent"
+                            app:layout_constraintWidth_default="percent" />
+
+                    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

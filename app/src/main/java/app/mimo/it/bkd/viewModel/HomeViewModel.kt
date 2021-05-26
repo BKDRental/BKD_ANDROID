@@ -33,6 +33,9 @@ class HomeViewModel : BaseViewModel() {
     private val _endWeek: MutableStateFlow<CharSequence?> = MutableStateFlow(null)
     val endWeek: StateFlow<CharSequence?> get() = _endWeek
 
+    private val _pickUpTime: MutableStateFlow<List<String>> = MutableStateFlow(mutableListOf())
+    val pickUpTime: StateFlow<List<String>> get() = _pickUpTime
+
     fun getDate(start: Long?, end: Long?) = viewModelScope.launch {
         start?.let {
             showTitle()
@@ -58,5 +61,33 @@ class HomeViewModel : BaseViewModel() {
         _endDay.emit(DateUtils.getDay(date))
         _endMonth.emit(DateUtils.getMonth(date))
         _endWeek.emit(DateUtils.getWeek(date))
+    }
+
+    private fun initTime() = viewModelScope.launch {
+        _pickUpTime.value = mutableListOf(
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30",
+            "17:00",
+            "17:30",
+            "18:00",
+            "18:30"
+        )
+    }
+
+    init {
+        initTime()
     }
 }

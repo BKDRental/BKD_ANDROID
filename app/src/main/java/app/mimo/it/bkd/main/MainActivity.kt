@@ -3,10 +3,9 @@ package app.mimo.it.bkd.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.*
 import app.mimo.it.bkd.R
 import app.mimo.it.bkd.databinding.ActivityMainBinding
 import app.mimo.it.bkd.viewModel.MainViewModel
@@ -24,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
         configureNavController()
+        supportActionBar?.hide()
+        showBottomBar()
         mBinding.bottomNavigation.itemIconTintList = null
     }
 
@@ -36,5 +37,23 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    private fun showBottomBar() {
+        mBinding.bottomNavigation.setupWithNavController(
+            Navigation.findNavController(
+                this,
+                R.id.nav_host_fragment
+            )
+        )
+        mBinding.bottomNavigation.setOnNavigationItemSelectedListener {
+            NavigationUI.onNavDestinationSelected(
+                it,
+                Navigation.findNavController(this, R.id.nav_host_fragment)
+            )
+            return@setOnNavigationItemSelectedListener true
+        }
+        mBinding.bottomNavigation.setOnNavigationItemReselectedListener {
+        }
     }
 }

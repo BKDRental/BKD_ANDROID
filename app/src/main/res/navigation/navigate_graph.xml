@@ -21,4 +21,22 @@
         android:id="@+id/homeFragment"
         android:name="app.mimo.it.bkd.feature.home.HomeFragment"
         tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="app.mimo.it.bkd.feature.category.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_category" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="app.mimo.it.bkd.feature.notification.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="app.mimo.it.bkd.feature.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

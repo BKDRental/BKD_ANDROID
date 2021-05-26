@@ -68,7 +68,13 @@
             android:id="@+id/NavigationView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start" />
+            android:layout_gravity="start">
+
+            <include
+                android:id="@+id/main_header"
+                layout="@layout/main_header"/>
+
+        </com.google.android.material.navigation.NavigationView>
 
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

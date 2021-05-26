@@ -22,4 +22,10 @@ dependencies {
     implementation Libraries.viewPager2
     // Glide
     implementation Libraries.glide
+    // Intuit
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    // Coil
+    implementation("io.coil-kt:coil:1.2.0")
+    implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+
 }

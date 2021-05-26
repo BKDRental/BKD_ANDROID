@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="app.mimo.it.domain.model.CategoryModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp">
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:text="@{model.name}"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/container_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_name">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_8sdp"
+                android:padding="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/img_car"
+                    android:layout_width="@dimen/_96sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/label_car_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="@string/fiat_doblo_l1h1"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_car" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
