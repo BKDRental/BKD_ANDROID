@@ -26,6 +26,12 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     // Coil
     implementation("io.coil-kt:coil:1.2.0")
+    // Expandable Layout
     implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+    // Google
+    implementation Libraries.location
+    implementation Libraries.places
+    implementation Libraries.maps_utils
+    implementation Libraries.maps
 
 }

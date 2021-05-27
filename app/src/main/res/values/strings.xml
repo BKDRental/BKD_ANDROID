@@ -32,4 +32,12 @@
     <string name="label_terms_of_use">Terms of Use</string>
     <string name="label_privacy_policy">Privacy Policy</string>
     <string name="label_time">Time</string>
+    <string name="label_bkd_office">BKD Office</string>
+    <string name="label_see_map">See map</string>
+    <string name="label_parking_1">Parking 1</string>
+    <string name="label_parking_2">Parking 2</string>
+    <string name="google_maps_key">AIzaSyDJmanwnDx8HE5cBeMtTA92EdgUCU3gXG4</string>
+    <string name="label_address_name">Address name</string>
+    <string name="label_route">Route</string>
+    <string name="label_ok">OK</string>
 </resources>

@@ -8,6 +8,7 @@ import app.mimo.it.bkd.R
 import app.mimo.it.bkd.databinding.FragmentHomeBinding
 import app.mimo.it.bkd.feature.home.adapter.CarListAdapter
 import app.mimo.it.bkd.feature.home.adapter.CarTypeAdapter
+import app.mimo.it.bkd.feature.home.adapter.LocationAdapter
 import app.mimo.it.bkd.feature.home.adapter.TimeAdapter
 import app.mimo.it.bkd.viewModel.HomeViewModel
 import app.mimo.it.bkd.widget.CarouselLayoutManager
@@ -27,6 +28,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private var isSearch = false
     private var isPickUpTime: Boolean = false
     private var isReturnTime: Boolean = false
+    private var isPickUpLocation: Boolean = false
+    private var isReturnLocation: Boolean = false
+    private var isPickUpSelected = false
+    private var isReturnSelected = false
 
     override fun getViewModel(): BaseViewModel = mViewModel
 
@@ -40,6 +45,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         initTime()
         mBinding.containerPickUpTime.collapse()
         mBinding.containerReturnTime.collapse()
+        mBinding.containerMapLocation.collapse()
+        initLocationRecycler()
     }
 
     private fun initListeners() {
@@ -55,6 +62,43 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             if (isReturnTime) hideReturnTime()
             else showReturnTime()
         }
+        mBinding.layoutPickUpLocation.setOnClickListener {
+            if (!isReturnSelected) {
+                showLocationSheet()
+            }
+        }
+
+        mBinding.layoutReturnLocation.setOnClickListener {
+            if (!isPickUpSelected) {
+                showLocation()
+            }
+        }
+    }
+
+    private fun showLocationSheet() {
+        if (!isPickUpLocation) {
+            isPickUpSelected = true
+            mBinding.containerMapLocation.expand()
+            mBinding.imagePickUpLocation.animate().rotation(180f).setDuration(500).start()
+        } else {
+            isPickUpSelected = false
+            mBinding.containerMapLocation.collapse()
+            mBinding.imagePickUpLocation.animate().rotation(0f).setDuration(500).start()
+        }
+        isPickUpLocation = !isPickUpLocation
+    }
+
+    private fun showLocation() {
+        if (!isReturnLocation) {
+            isReturnSelected = true
+            mBinding.containerMapLocation.expand()
+            mBinding.imageReturnLocation.animate().rotation(180f).setDuration(500).start()
+        } else {
+            isReturnSelected = false
+            mBinding.containerMapLocation.collapse()
+            mBinding.imageReturnLocation.animate().rotation(0f).setDuration(500).start()
+        }
+        isReturnLocation = !isReturnLocation
     }
 
     private fun startAnimate(animate: Int) {
@@ -153,5 +197,47 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         mBinding.textEndTime.show()
         mBinding.textEndTime.text = time
         mBinding.textUnderTime.show()
+    }
+
+    private fun initLocationRecycler() {
+        mBinding.listLocation.apply {
+            adapter = LocationAdapter(::selectLocation, ::openMap).apply {
+                updateData(
+                    mutableListOf(
+                        getString(R.string.label_bkd_office),
+                        getString(R.string.label_parking_1),
+                        getString(R.string.label_parking_2)
+                    )
+                )
+            }
+        }
+    }
+
+    private fun openMap() {
+        if (isPickUpSelected) {
+            isPickUpSelected = !isPickUpSelected
+            mBinding.imagePickUpLocation.animate().rotation(0f).setDuration(500).start()
+            isPickUpLocation = !isPickUpLocation
+        } else {
+            isReturnSelected = !isReturnSelected
+            mBinding.imageReturnLocation.animate().rotation(0f).setDuration(500).start()
+            isReturnLocation = !isReturnLocation
+        }
+        mViewModel.navigate(HomeFragmentDirections.homeFragmentToMapFragment())
+    }
+
+    private fun selectLocation(name: String) {
+        mBinding.containerMapLocation.collapse()
+        if (isPickUpSelected) {
+            mBinding.textPickUpLocation.text = name
+            isPickUpSelected = !isPickUpSelected
+            mBinding.imagePickUpLocation.animate().rotation(0f).setDuration(500).start()
+            isPickUpLocation = !isPickUpLocation
+        } else {
+            isReturnSelected = !isReturnSelected
+            mBinding.textReturnLocation.text = name
+            mBinding.imageReturnLocation.animate().rotation(0f).setDuration(500).start()
+            isReturnLocation = !isReturnLocation
+        }
     }
 }

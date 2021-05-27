@@ -55,6 +55,10 @@ object Versions {
     const val dataBase = "19.6.0"
     const val messaging = "21.0.1"
     const val bom = "26.4.0"
+    const val location = "18.0.0"
+    const val places = "17.0.0"
+    const val maps_utils = "0.5"
+    const val maps = "17.0.0"
 }
 
 object Libraries {
@@ -88,6 +92,12 @@ object Libraries {
     // FIREBASE KTX
     const val auth_ktx = "com.google.firebase:firebase-auth-ktx"
     const val database_ktx = "com.google.firebase:firebase-database-ktx"
+
+    // GOOGLE
+    const val location = "com.google.android.gms:play-services-location:${Versions.location}"
+    const val places = "com.google.android.gms:play-services-places:${Versions.places}"
+    const val maps_utils = "com.google.maps.android:android-maps-utils:${Versions.maps_utils}"
+    const val maps = "com.google.android.gms:play-services-maps:${Versions.maps}"
 }
 
 object KotlinLibraries {

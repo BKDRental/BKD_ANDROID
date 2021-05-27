@@ -20,7 +20,13 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="app.mimo.it.bkd.feature.home.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/homeFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/categoryFragment"
@@ -39,4 +45,11 @@
         android:name="app.mimo.it.bkd.feature.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="app.mimo.it.bkd.feature.map.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/fragment_map" />
+
 </navigation>
