@@ -12,4 +12,5 @@ val viewModelModules = module {
     viewModel { NotificationViewModel() }
     viewModel { ProfileViewModel() }
     viewModel { MapViewModel() }
+    viewModel { SearchViewModel() }
 }

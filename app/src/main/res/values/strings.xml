@@ -40,4 +40,20 @@
     <string name="label_address_name">Address name</string>
     <string name="label_route">Route</string>
     <string name="label_ok">OK</string>
+    <string name="label_location_name">Location Name</string>
+    <string name="_22">22</string>
+    <string name="feb">Feb</string>
+    <string name="mon">Mon</string>
+    <string name="_15_30">15:30</string>
+    <string name="label_search_results">Search Results</string>
+    <string name="town_bar">Town Bar</string>
+    <string name="label_transmission">Transmission</string>
+    <string name="label_exterior">Exterior</string>
+    <string name="label_5_91_x_2_42_x_2_82_m">5.91 x 2.42 x 2.82 m</string>
+    <string name="label_double_cable">Double cabin</string>
+    <string name="lable_tail_lift">Tail Lift</string>
+    <string name="label_gps_navigation">GPS navigation</string>
+    <string name="label_air_conditioning">Air conditioning</string>
+    <string name="label_manual">Manual</string>
+    <string name="label_autamatic">Automatic</string>
 </resources>

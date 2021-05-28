@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/purple_200"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/action_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_L"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_search_results"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_L"
+                android:src="@drawable/ic_message"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/container_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:elevation="@dimen/_4sdp"
+            app:cardCornerRadius="0dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/action_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#E9C96B"
+                    android:padding="@dimen/_12sdp"
+                    android:src="@drawable/ic_pen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <View
+                    android:id="@+id/dateLine"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/margin_XXS"
+                    android:layout_marginEnd="@dimen/_64sdp"
+                    android:layout_marginBottom="@dimen/margin_XXS"
+                    android:background="@color/color_line"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_location_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/label_location_name"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_22"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_18sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/label_location_name"
+                    app:layout_constraintTop_toBottomOf="@id/label_location_name" />
+
+                <TextView
+                    android:id="@+id/textEndMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_XXS_Big"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/feb"
+                    android:textColor="@color/purple_200"
+                    android:textSize="@dimen/text_size_MIN"
+                    app:layout_constraintStart_toEndOf="@id/label_day"
+                    app:layout_constraintTop_toTopOf="@id/label_day" />
+
+                <TextView
+                    android:id="@+id/textEndWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_XXS_Big"
+                    android:text="@string/_15_30"
+                    android:textColor="@color/purple_200"
+                    android:textSize="@dimen/text_size_MIN"
+                    app:layout_constraintStart_toEndOf="@id/label_day"
+                    app:layout_constraintTop_toBottomOf="@id/textEndMonth" />
+
+                <TextView
+                    android:id="@+id/label_return_location_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/label_location_name"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_8sdp"
+                    app:layout_constraintEnd_toStartOf="@id/action_edit"
+                    app:layout_constraintStart_toEndOf="@id/dateLine"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/label_return_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_22"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_18sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/label_return_location_name"
+                    app:layout_constraintTop_toBottomOf="@id/label_location_name" />
+
+                <TextView
+                    android:id="@+id/text_return_Month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_XXS_Big"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="@string/feb"
+                    android:textColor="@color/purple_200"
+                    android:textSize="@dimen/text_size_MIN"
+                    app:layout_constraintStart_toEndOf="@id/label_return_day"
+                    app:layout_constraintTop_toTopOf="@id/label_return_day" />
+
+                <TextView
+                    android:id="@+id/label_return_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_XXS_Big"
+                    android:text="@string/_15_30"
+                    android:textColor="@color/purple_200"
+                    android:textSize="@dimen/text_size_MIN"
+                    app:layout_constraintStart_toEndOf="@id/label_return_day"
+                    app:layout_constraintTop_toBottomOf="@id/text_return_Month" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/action_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintEnd_toEndOf="@id/container_search"
+            app:layout_constraintTop_toBottomOf="@id/container_search"
+            tools:ignore="ContentDescription" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/action_filter">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:orientation="vertical"
+                android:padding="@dimen/_4sdp"
+                app:layout_constraintTop_toBottomOf="@id/action_filter">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:visibility="gone"
+                    android:id="@+id/container_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_4sdp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_12sdp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/list_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:text="@string/label_transmission"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/list_transmission"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:text="@string/label_exterior"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:background="@drawable/bg_rounded_stroke_blue"
+                            android:padding="@dimen/_6sdp"
+                            android:text="@string/label_5_91_x_2_42_x_2_82_m"
+                            android:textColor="@color/text_color" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/carList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/container_search" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

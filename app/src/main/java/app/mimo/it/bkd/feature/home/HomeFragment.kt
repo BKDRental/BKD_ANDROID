@@ -18,6 +18,7 @@ import app.mimo.it.core.extensions.remove
 import app.mimo.it.core.extensions.show
 import app.mimo.it.local.CarTypeModel
 import coil.load
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -51,8 +52,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private fun initListeners() {
         mBinding.containerSearch.setOnClickListener {
-            if (!isSearch) startAnimate(R.anim.move_to_right)
-            else startAnimate(R.anim.move_to_left)
+            startAnimate(R.anim.move_to_right)
+            lifecycleScope.launch {
+                delay(1500)
+                mViewModel.navigate(HomeFragmentDirections.homeFragmentToSearchFragment())
+            }
         }
         mBinding.ImagePickUp.setOnClickListener {
             if (isPickUpTime) hidePickUpTime()
